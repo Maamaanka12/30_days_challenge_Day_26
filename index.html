@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Basbaas Butter Pasta — Dhole Recipe Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Public+Sans:ital,wght@0,300..800;1,300..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#1d3327;
+  --pine-deep:#14231b;
+  --ink:#15201a;
+  --paper:#eef0e2;
+  --card:#fbfbf1;
+  --tomato:#c93a2b;
+  --tomato-deep:#a02c20;
+  --gold:#e8a317;
+  --sage:#9db08c;
+  --line:rgba(21,32,26,.14);
+  --radius:22px;
+  --font-display:"Bricolage Grotesque",sans-serif;
+  --font-body:"Public Sans",sans-serif;
+  --font-mono:"Space Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+/* header */
+.topbar{
+  position:sticky;top:12px;z-index:50;
+  max-width:1180px;margin:12px auto 0;padding:10px 10px 10px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:rgba(20,35,27,.94);color:#f2f4e8;border-radius:999px;
+  backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 12px 32px rgba(20,35,27,.25);
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
+.brand-mark{width:34px;height:34px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:var(--pine-deep);font-weight:800}
+nav{display:flex;gap:4px;background:rgba(255,255,255,.08);padding:4px;border-radius:999px}
+nav a{text-decoration:none;font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;padding:9px 16px;border-radius:999px}
+nav a[aria-current="page"],nav a:hover{background:#f2f4e8;color:var(--pine-deep)}
+.cook-btn{background:var(--tomato);color:#fff;border:0;border-radius:999px;padding:11px 20px;font-weight:700;font-family:var(--font-body);cursor:pointer}
+.cook-btn:hover{background:var(--tomato-deep)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+/* hero */
+.hero{
+  margin-top:18px;display:grid;grid-template-columns:1.05fr .95fr;
+  background:var(--pine);color:#eef2e2;border-radius:32px;overflow:hidden;
+  border:1px solid rgba(0,0,0,.2);
+}
+.hero-copy{padding:48px 44px 36px;position:relative}
+.eyebrow{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);display:inline-block}
+h1{font-family:var(--font-display);font-size:clamp(2.6rem,5.2vw,4.3rem);line-height:.95;letter-spacing:-.04em;margin:16px 0 14px;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(180deg,transparent 62%,var(--tomato) 62%,var(--tomato) 94%,transparent 94%)}
+.lede{color:#c8d3bd;max-width:44ch;font-size:1.05rem}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px 14px;font-family:var(--font-mono);font-size:.8rem}
+.pill b{background:var(--gold);color:var(--pine-deep);border-radius:999px;padding:2px 10px;font-size:.75rem}
+.progress-card{margin-top:8px;background:#fbfbf1;color:var(--ink);border-radius:18px;padding:16px 18px;display:flex;gap:16px;align-items:center}
+.progress-ring{width:64px;height:64px;flex:none;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--tomato) calc(var(--p,0)*1%),#e7e4d2 0);font-weight:800}
+.progress-ring span{background:#fbfbf1;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-mono);font-size:.8rem}
+.progress-card p{margin:0;font-size:.9rem}
+.hero-media{position:relative;min-height:520px}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.arch-veil{position:absolute;inset:18px;border:1.5px dashed rgba(255,255,255,.7);border-radius:220px 220px 22px 22px;pointer-events:none}
+.float-card{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(251,251,241,.92);backdrop-filter:blur(8px);border-radius:16px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
+.float-card strong{font-family:var(--font-display)}
+.timer{font-family:var(--font-mono);display:flex;gap:8px;align-items:center}
+.timer button{border:1px solid var(--ink);background:transparent;border-radius:999px;padding:6px 14px;font-family:var(--font-mono);cursor:pointer}
+/* layout */
+.grid{display:grid;grid-template-columns:360px 1fr;gap:22px;margin-top:22px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.card h2{font-family:var(--font-display);letter-spacing:-.02em;margin:0 0 6px;font-size:1.6rem}
+.sub{font-family:var(--font-mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.14em;color:#6b7a6e;margin:0 0 16px}
+.ing{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ing li{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:11px 12px;cursor:pointer;background:#fff;transition:.18s}
+.ing li:hover{transform:translateY(-1px);border-color:var(--pine)}
+.ing input{width:20px;height:20px;margin-top:2px;accent-color:var(--tomato);flex:none}
+.ing li.done{opacity:.62;text-decoration:line-through;background:#f0f1e3}
+.ing small{display:block;color:#66756a;font-family:var(--font-mono);font-size:.76rem}
+.steps{counter-reset:step;list-style:none;margin:0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:22px 6px;border-top:1px solid var(--line);border-radius:12px}
+.steps li:first-child{border-top:0}
+.num{width:52px;height:52px;border-radius:50%;background:var(--pine);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:1.2rem}
+.steps li.active .num{background:var(--tomato)}
+.steps h3{margin:2px 0 6px;font-family:var(--font-display);font-size:1.15rem}
+.steps p{margin:0;color:#3d4a42}
+.tip{margin-top:14px;background:var(--pine-deep);color:#e8ecd9;border-radius:16px;padding:16px 18px;font-size:.92rem}
+.tip b{color:var(--gold)}
+footer{max-width:1180px;margin:0 auto 26px;padding:18px 22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;background:var(--pine-deep);color:#cbd5bf;border-radius:18px}
+footer a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.2);padding:7px 14px;border-radius:999px;font-family:var(--font-mono);font-size:.78rem}
+footer a:hover{background:#fff;color:var(--pine-deep)}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}.hero-media{min-height:360px}
+  .grid{grid-template-columns:1fr}
+  .topbar{border-radius:18px;flex-wrap:wrap} nav{order:3;width:100%;justify-content:space-between}
+  .hero-copy{padding:30px 24px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">Dh</span> Dhole &nbsp;·&nbsp; Recipe Co.</div>
+  <nav aria-label="Primary">
+    <a href="#" aria-current="page">Home</a>
+    <a href="#ingredients">All Recipes</a>
+    <a href="#footer">Contact</a>
+  </nav>
+  <button class="cook-btn" onclick="document.getElementById('steps').scrollIntoView({behavior:'smooth'})">Start cooking →</button>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Day 27 · Featured · Pasta Night</p>
+      <h1>Basbaas <em>butter</em> pasta in 20 mins.</h1>
+      <p class="lede">Silky garlic-tomato cream, a spoon of green basbaas heat, and charred cherry tomatoes. Weeknight-easy, restaurant-glossy.</p>
+      <div class="meta">
+        <span class="pill"><b>Easy · 20 mins</b> Difficulty</span>
+        <span class="pill">⏱ Prep 8 · Cook 12</span>
+        <span class="pill">🍝 Serves 2–3</span>
+        <span class="pill">🌶 Mild → Wild</span>
+      </div>
+      <div class="progress-card">
+        <div class="progress-ring" id="ring" style="--p:0"><span id="pct">0%</span></div>
+        <p><strong id="countLabel">0 of 8 ingredients gathered.</strong><br>Tap ingredients to check them off — the ring tracks your mise en place.</p>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1200&auto=format&fit=crop" alt="Creamy tomato pasta with basil in a pan" />
+      <div class="arch-veil"></div>
+      <div class="float-card">
+        <div><strong>Cook-along mode</strong><br><span style="font-family:var(--font-mono);font-size:.78rem">Steps light up as you cook</span></div>
+        <div class="timer"><span id="clock">20:00</span><button id="tbtn" aria-label="Start timer">Start</button></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <aside class="card" id="ingredients">
+      <p class="sub">Mise en place — 8 items</p>
+      <h2>Ingredients checklist</h2>
+      <p style="color:#5a6860;margin-top:0">Everything in one tray before the pan gets hot.</p>
+      <ul class="ing" id="ingList">
+        <li><input type="checkbox" id="i1"><label for="i1">250g rigatoni / penne <small>bronze-cut holds sauce best</small></label></li>
+        <li><input type="checkbox" id="i2"><label for="i2">250g cherry tomatoes <small>halved · for charring</small></label></li>
+        <li><input type="checkbox" id="i3"><label for="i3">4 garlic cloves, grated <small>+ 1 shallot, diced</small></label></li>
+        <li><input type="checkbox" id="i4"><label for="i4">2 tbsp tomato paste <small>caramelized, not raw</small></label></li>
+        <li><input type="checkbox" id="i5"><label for="i5">200ml double cream <small>or coconut cream</small></label></li>
+        <li><input type="checkbox" id="i6"><label for="i6">40g butter + parmesan <small>salted butter preferred</small></label></li>
+        <li><input type="checkbox" id="i7"><label for="i7">1–2 tsp green basbaas <small>heat to taste</small></label></li>
+        <li><input type="checkbox" id="i8"><label for="i8">Basil, lemon + olive oil <small>to finish</small></label></li>
+      </ul>
+    </aside>
+
+    <section class="card" id="steps">
+      <p class="sub">Method — tap a step to mark active</p>
+      <h2>Step-by-step instructions</h2>
+      <ol class="steps" id="stepList">
+        <li><div class="num">1</div><div><h3>Boil salty like the sea</h3><p>Bring a large pot to a rolling boil. Salt generously, cook pasta 1 min shy of packet. Save 1 cup pasta water.</p></div></li>
+        <li><div class="num">2</div><div><h3>Char the tomatoes</h3><p>Hot pan + olive oil, tomatoes cut-side down 3 mins until blistered. Scoop out, keep the fond.</p></div></li>
+        <li><div class="num">3</div><div><h3>Build the base</h3><p>Lower heat. Butter, shallot 2 mins, garlic 30 secs, tomato paste 2 mins until brick-red and glossy.</p></div></li>
+        <li><div class="num">4</div><div><h3>Cream + basbaas</h3><p>Stir in cream and 1 tsp basbaas. Simmer 2 mins. Splash pasta water to loosen to a coating sauce.</p></div></li>
+        <li><div class="num">5</div><div><h3>Marry pasta & sauce</h3><p>Toss pasta + half the parmesan 2 mins, adding water until it shines. Fold back tomatoes.</p></div></li>
+        <li><div class="num">6</div><div><h3>Finish bright</h3><p>Off heat: lemon zest + squeeze, torn basil, more basbaas if brave. Top with parmesan, serve now.</p></div></li>
+      </ol>
+      <div class="tip"><b>Cook's note:</b> sauce too thick? Pasta water. Too mild? More basbaas. Too rich? More lemon. Taste three times.</div>
+    </section>
+  </div>
+</main>
+
+<footer id="footer">
+  <span>© 2026 Dhole Recipe Co. — Day 27 Challenge.</span>
+  <span style="display:flex;gap:8px"><a href="#" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);return false;">Share ⎙</a><a href="#" onclick="window.print();return false;">Print</a><a href="#" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);return false;">Copy link</a></span>
+</footer>
+
+<script>
+const boxes=[...document.querySelectorAll('#ingList input')];
+const ring=document.getElementById('ring'), pct=document.getElementById('pct'), label=document.getElementById('countLabel');
+function update(){
+  const n=boxes.filter(b=>b.checked).length;
+  const p=Math.round(n/boxes.length*100);
+  ring.style.setProperty('--p',p); pct.textContent=p+'%';
+  label.textContent=`${n} of ${boxes.length} ingredients gathered.`;
+  boxes.forEach(b=>b.closest('li').classList.toggle('done',b.checked));
+}
+boxes.forEach(b=>b.addEventListener('change',update));
+document.querySelectorAll('#ingList li').forEach(li=>li.addEventListener('click',e=>{
+  if(e.target.tagName!=='INPUT'){const c=li.querySelector('input');c.checked=!c.checked;update();}
+}));
+update();
+// steps active
+document.querySelectorAll('#stepList li').forEach(li=>li.addEventListener('click',()=>{
+  document.querySelectorAll('#stepList li').forEach(x=>x.classList.remove('active'));
+  li.classList.add('active');
+}));
+// timer
+let s=20*60, iv=null; const clock=document.getElementById('clock'), btn=document.getElementById('tbtn');
+btn.onclick=()=>{
+  if(iv){clearInterval(iv);iv=null;btn.textContent='Start';return;}
+  btn.textContent='Pause';
+  iv=setInterval(()=>{ if(s<=0){clearInterval(iv);clock.textContent='Eat!';return;} s--;
+    clock.textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');},1000);
+};
+</script>
+</body>
+</html>
